@@ -1,10 +1,14 @@
-// This change is just to trigger a deploy
-import React, { useState } from "react";
+// rigger deploy
+import React, { useState, useEffect } from "react";
 import logo from "./assets/glass-action-logo-4x-current.png";
 import heroImage from "./assets/hero-image.jpg";
 import truckImage from "./assets/truck-photo.jpg";
 
 function App() {
+  useEffect(() => {
+    document.title = "Glass Action Cleaning | Window Cleaning, Pressure Washing & Solar Panel Cleaning in Long Beach";
+  }, []);
+// force commit test 🚀
   const [showSolar, setShowSolar] = useState(false);
   const [showOther, setShowOther] = useState(false);
 
