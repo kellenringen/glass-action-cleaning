@@ -271,6 +271,53 @@ function App() {
     </div>
   </div>
 
+  <section className="text-center mt-12 px-4">
+  <h3 className="text-xl font-semibold mb-2">See More 5-Star Reviews</h3>
+  <p className="mb-4">
+     ⭐️⭐️⭐️⭐️⭐️ 
+  </p>
+  <div className="flex justify-center gap-8 items-center">
+
+    {/* Google Reviews */}
+    <div className="flex flex-col items-center">
+      <a
+        href="https://www.google.com/maps/place/Glass+Action+Cleaning/@33.7769826,-118.1577912,17z/data=!4m8!3m7!1s0x80dd31bbea5e506b:0xb63143262eea0639!8m2!3d33.7769826!4d-118.1552163!9m1!1b1!16s%2Fg%2F11bc73bx89?entry=ttu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="h-8 w-8 mb-1">
+          <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32.2 29.2 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 0.9 6.9 2.4l6-6C33.5 5.1 28.9 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 19.3-7.6 20.9-17.5.1-.5.1-1 .1-1.5 0-1.5-.1-2.9-.4-4.5z"/>
+          <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.3 16 18.8 13 24 13c2.6 0 5 0.9 6.9 2.4l6-6C33.5 5.1 28.9 3 24 3c-7.7 0-14.3 3.8-18.4 9.7z"/>
+          <path fill="#4CAF50" d="M24 45c5.2 0 9.9-1.8 13.5-4.8l-6.3-5.2c-1.9 1.4-4.3 2.2-7.2 2.2-5.2 0-9.6-3.5-11.2-8.2l-6.5 5c3.9 7.4 11.5 12.3 20.2 12.3z"/>
+          <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-1.1 3.3-3.6 6-6.8 7.6l.1.1 6.3 5.2c-.4.3 7.1-5.2 7.1-15.4 0-1.5-.1-2.9-.4-4.5z"/>
+        </svg>
+      </a>
+      <p className="text-xs text-gray-600">Google Reviews</p>
+    </div>
+
+    {/* Yelp Reviews */}
+    <div className="flex flex-col items-center">
+      <a
+        href="https://www.yelp.com/biz/glass-action-cleaning-long-beach"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg"
+          alt="Yelp Reviews"
+          className="h-6 mb-1"
+        />
+      </a>
+      <p className="text-xs text-gray-600">Yelp Reviews</p>
+    </div>
+
+  </div>
+</section>
+
+  
+
 
       </section>
 
@@ -351,7 +398,7 @@ function App() {
       </a>{" "}
       |{" "}
       <a
-        href="https://g.page/r/Ca7-EQK5Sdv5EBM/review"
+        href="https://www.google.com/maps/place/Glass+Action+Cleaning/@33.7769826,-118.1577912,17z/data=!4m8!3m7!1s0x80dd31bbea5e506b:0xb63143262eea0639!8m2!3d33.7769826!4d-118.1552163!9m1!1b1!16s%2Fg%2F11bc73bx89?entry=ttu&g_ep=EgoyMDI1MDYwOS4xIKXMDSoASAFQAw%3D%3D"
         target="_blank"
         rel="noopener noreferrer"
         className="text-blue-600 hover:underline"
