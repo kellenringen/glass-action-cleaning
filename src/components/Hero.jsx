@@ -1,39 +1,29 @@
-import heroImage from '@/assets/hero-image.jpg';
+import React from "react";
+import heroImage from "../assets/hero-image.jpg";
 
-export default function Hero() {
+function Hero() {
   return (
-    <section className="w-full py-12 px-4 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
-      {/* Left: Text */}
-      <div className="lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-          Crystal Clear Every Time
-        </h1>
-        <p className="text-lg text-gray-600 mb-6">
-          Professional window, solar panel, and pressure washing services for homes and businesses.
-        </p>
-        <a
-          href="#quote"
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
-        >
-          Get a Free Quote
-        </a>
-      </div>
-
-      {/* Right: Hero Image */}
-      <div className="lg:w-1/2 mt-8 lg:mt-0">
-        <img
-          src={heroImage}
-          alt="Ocean view windows"
-          className="w-full rounded-xl shadow-xl object-cover"
-        />
-      </div>
+    <section
+      className="bg-cover bg-center text-white text-center py-32 px-6 md:px-0"
+      style={{ backgroundImage: `url(${heroImage})` }}
+    >
+      <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-md mb-4">
+        Glass Action Cleaning
+      </h1>
+      <p className="text-lg md:text-xl mb-2 drop-shadow-md">
+        Window Cleaning, Pressure Washing & Solar Panel Cleaning in Long Beach, CA
+      </p>
+      <p className="max-w-xl mx-auto mb-6 text-white drop-shadow-md">
+        Glass Action Cleaning provides professional cleaning services for residents and businesses in and around Long Beach, CA.
+      </p>
+      <a
+        href="#quote"
+        className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition"
+      >
+        Request a Quote
+      </a>
     </section>
   );
 }
 
-
-
-
-
-
-
+export default Hero;

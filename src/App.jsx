@@ -1,11 +1,332 @@
+import React, { useState } from "react";
+import { FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import logo from "./assets/glass-action-logo-4x-current.png";
+import heroImage from "./assets/hero-image.jpg";
+import truckImage from "./assets/truck-photo.jpg";
+import windowImg from "./assets/window-cleaning.jpg";
+import pressureImg from "./assets/pressure-washing-2.jpg";
+import solarImg from "./assets/solar-panel-cleaning.jpg";
 
 function App() {
+  const [showSolar, setShowSolar] = useState(false);
+  const [showPressure, setShowPressure] = useState(false);
+  const [showWindow, setShowWindow] = useState(false);
+  const [showPressureOther, setShowPressureOther] = useState(false);
+  const [showWindowOther, setShowWindowOther] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    if (name === "solar") setShowSolar(checked);
+    if (name === "pressure") setShowPressure(checked);
+    if (name === "window") setShowWindow(checked);
+  };
+
   return (
-    <div className="text-center p-8">
-      <h1 className="text-3xl font-bold text-blue-600">Glass Action Cleaning</h1>
-      <p className="mt-4">Window Cleaning, Pressure Washing & Solar Panel Cleaning in Long Beach, CA</p>
+    <div className="w-full font-sans bg-white">
+      {/* Header */}
+      <header className="w-full px-4 py-2 md:py-4 shadow bg-white sticky top-0 z-50">
+  <div className="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center text-center md:text-left">
+
+    {/* Desktop Nav + Instagram (left) */}
+    <nav className="hidden md:flex items-center gap-6">
+      <a href="#services" className="text-gray-700 hover:text-blue-600 text-sm font-medium">Services</a>
+      <a href="#about" className="text-gray-700 hover:text-blue-600 text-sm font-medium">About</a>
+      <a href="#testimonials" className="text-gray-700 hover:text-blue-600 text-sm font-medium">Testimonials</a>
+      <a href="#quote" className="text-gray-700 hover:text-blue-600 text-sm font-medium">Contact</a>
+      <a
+        href="https://www.instagram.com/glassactioncleaning?igsh=NTc4MTIwNjQ2YQ=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-700 hover:text-pink-500 text-xl"
+        aria-label="Instagram"
+      >
+        <FaInstagram />
+      </a>
+    </nav>
+
+    {/* Mobile Left: Hamburger + Instagram */}
+    <div className="md:hidden flex items-center gap-3">
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="text-xl text-gray-700"
+      >
+        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+      <a
+        href="https://www.instagram.com/glassactioncleaning?igsh=NTc4MTIwNjQ2YQ=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-lg text-gray-700 hover:text-pink-500"
+      >
+        <FaInstagram />
+      </a>
+    </div>
+
+    {/* Center Logo */}
+    <div className="flex justify-center">
+      <a href="#hero">
+        <img
+          src={logo}
+          alt="Glass Action Cleaning Logo"
+          className="h-12 sm:h-14 md:h-20 object-contain cursor-pointer"
+        />
+      </a>
+    </div>
+
+    {/* Quote Button (right) */}
+    <div className="flex justify-end items-center mt-1 md:mt-0">
+      <a
+        href="#quote"
+        className="bg-blue-600 text-white px-4 py-2 text-[13px] md:text-sm whitespace-nowrap rounded-lg shadow hover:bg-blue-700 transition"
+      >
+        REQUEST A QUOTE
+      </a>
+    </div>
+  </div>
+
+  {/* Mobile Dropdown Menu with Animation */}
+  <div
+    className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+      mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+    }`}
+  >
+    <div className="px-4 pb-4 pt-2 space-y-3 text-sm font-medium text-gray-800 bg-white shadow-md">
+      <a
+        href="#services"
+        onClick={() => setMobileMenuOpen(false)}
+        className="block hover:text-blue-500 py-2 px-2"
+      >
+        Services
+      </a>
+      <a
+        href="#about"
+        onClick={() => setMobileMenuOpen(false)}
+        className="block hover:text-blue-500 py-2 px-2"
+      >
+        About
+      </a>
+      <a
+        href="#testimonials"
+        onClick={() => setMobileMenuOpen(false)}
+        className="block hover:text-blue-500 py-2 px-2"
+      >
+        Testimonials
+      </a>
+      <a
+        href="#quote"
+        onClick={() => setMobileMenuOpen(false)}
+        className="block hover:text-blue-500 py-2 px-2"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+      {/* Hero Section */}
+      <section id="hero" className="scroll-mt-40 md:scroll-mt-28 w-full py-16 px-4 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
+            WINDOW CLEANING, PRESSURE WASHING & SOLAR PANEL CLEANING IN LONG BEACH, CA
+          </h1>
+          <p className="text-blue-600 text-xl italic font-semibold mb-2">Your trusted cleaning company</p>
+          <p className="text-lg text-gray-600 mb-6">
+            Glass Action Cleaning provides professional cleaning services for residents and businesses in and around Long Beach, CA.
+          </p>
+          <a href="#quote" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+            Request a Free Quote
+          </a>
+        </div>
+        <div className="lg:w-1/2 mt-10 lg:mt-0">
+          <img src={heroImage} alt="Ocean view windows" className="w-full rounded-xl shadow-xl object-cover" />
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="scroll-mt-40 md:scroll-mt-28 py-16 px-4 bg-white">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Window Cleaning */}
+  <div className="border rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center">
+    <img src={windowImg} alt="Window Cleaning" className="mx-auto mb-4 h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 object-cover rounded shadow-2xl" />
+    <h3 className="text-xl font-bold mb-1">Window Cleaning</h3>
+    <p className="text-gray-500 text-sm mb-4">Residential and commercial cleaning services.</p>
+    <ul className="space-y-2">
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Interior & exterior windows</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Screen cleaning</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Track & sill cleaning</li>
+    </ul>
+  </div>
+
+  {/* Pressure Washing */}
+  <div className="border rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center">
+    <img src={pressureImg} alt="Pressure Washing" className="mx-auto mb-4 h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 object-cover rounded shadow-2xl" />
+    <h3 className="text-xl font-bold mb-1">Pressure Washing</h3>
+    <p className="text-gray-500 text-sm mb-4">High-pressure and soft wash solutions.</p>
+    <ul className="space-y-2">
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Home & business exteriors</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Removes tough stains</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Bring surfaces back to life</li>
+    </ul>
+  </div>
+
+  {/* Solar Panel Cleaning */}
+  <div className="border rounded-xl p-6 shadow hover:shadow-lg transition flex flex-col items-center text-center">
+    <img src={solarImg} alt="Solar Panel Cleaning" className="mx-auto mb-4 h-40 w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 object-cover rounded shadow-2xl" />
+    <h3 className="text-xl font-bold mb-1">Solar Panel Cleaning</h3>
+    <p className="text-gray-500 text-sm mb-4">Specialized cleaning for optimal performance.</p>
+    <ul className="space-y-2">
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Increased energy efficiency</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Extends panel lifespan</li>
+      <li className="flex items-start gap-2 text-gray-700"><span className="text-blue-500">✔</span> Protect your investment 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Why Choose Us */}
+      <section id="about" className="scroll-mt-40 md:scroll-mt-28 bg-gray-100 py-16 px-4">
+  <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-blue-700 tracking-tight">
+        Why Choose Glass Action Cleaning
+      </h2>
+
+      <p className="text-base text-gray-700 leading-relaxed mb-4">
+        We take pride in delivering exceptional cleaning services with attention to detail and customer satisfaction as the top priorities.
+      </p>
+
+      <p className="text-base text-gray-700 leading-relaxed mb-4">
+        Glass Action is equipped to handle your cleaning needs by using the right equipment, at the right time, for the right job.
+      </p>
+
+      <p className="text-base text-gray-700 leading-relaxed mb-6">
+        Owner Kellen Ringen is a CSU Long Beach Alumni with over a decade of experience serving his community. His goal is to go above and beyond creating long-lasting relationships with each and every customer.
+      </p>
+
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+        <ul className="list-disc list-outside pl-6 space-y-3 text-gray-800 text-base md:text-lg font-semibold">
+          <li>Locally owned and operated since 2014</li>
+          <li>Friendly and professional service</li>
+          <li>Modern tools & techniques to ensure amazing results</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <img src={truckImage} alt="Glass Action truck" className="w-full rounded-xl shadow-xl" />
+    </div>
+  </div>
+</section>
+
+      
+
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="scroll-mt-40 md:scroll-mt-28 bg-gray-50 py-16 px-4">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-3xl font-bold mb-10">What Our Customers Say</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Robert O. */}
+      <div className="bg-white p-6 rounded-xl shadow-md text-left flex flex-col items-start">
+        <div className="flex text-yellow-400 text-lg mb-2">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p className="text-gray-700 mb-2">
+          "Kellen is the ultimate professional. He arrived on time, his workmanship is flawless and he is extremely pleasant. Highly recommended!"
+        </p>
+        <p className="font-semibold text-blue-600">– Robert O. (via Yelp)</p>
+      </div>
+
+      {/* Connie H. */}
+      <div className="bg-white p-6 rounded-xl shadow-md text-left flex flex-col items-start">
+        <div className="flex text-yellow-400 text-lg mb-2">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p className="text-gray-700 mb-2">
+          "Kellen did a magnificent job on our windows—they are beautiful inside and out! He was a total pleasure to have in our home and extremely knowledgeable about all aspects of window washing."
+        </p>
+        <p className="font-semibold text-blue-600">– Connie H. (via Google)</p>
+      </div>
+
+      {/* Thomas B. */}
+      <div className="bg-white p-6 rounded-xl shadow-md text-left flex flex-col items-start">
+        <div className="flex text-yellow-400 text-lg mb-2">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p className="text-gray-700 mb-2">
+          "Kellen did an outstanding job. He was very thorough, polite, and professional, and the gorgeous results speak for themselves. Pricing and scheduling were very reasonable. Highly recommended!"
+        </p>
+        <p className="font-semibold text-blue-600">– Thomas B. (via Yelp)</p>
+      </div>
+
+    </div>
+  </div>
+
+
+      </section>
+
+      {/* Quote Form Section */}
+<section id="quote" className="py-16 px-4 bg-white scroll-mt-28">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+    
+    {/* Contact Info (Left Column) */}
+    <div>
+      <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+      <p className="text-gray-600 mb-6">
+        Ready to experience the best cleaning services? Reach out to us for a free quote or to schedule a service.
+      </p>
+      <div className="space-y-4 text-gray-800">
+        <p><strong>📞 Phone:</strong> (562) 280–4661</p>
+        <p><strong>📧 Email:</strong> glassactioncleaning@gmail.com</p>
+        <p><strong>📍 Location:</strong> Long Beach, CA</p>
+      </div>
+    </div>
+
+    {/* Embedded Markate Form (Right Column) */}
+    <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
+      <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">
+        Request a Quote
+      </h2>
+      <div className="w-full">
+        <iframe
+          id="markate-widget-contact-iframe"
+          src="https://www.markate.com/public/widget/contact?id=354173a034482a00258a54ec76edea93:36100:09b15aee"
+          width="100%"
+          height="1800"
+          scrolling="no"
+          frameBorder="0"
+          allowTransparency="true"
+          style={{ border: "none", overflow: "hidden" }}
+          title="Get a Quote - Glass Action Cleaning"
+        />
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<div className="hidden">
+  window cleaning, pressure washing, solar panel cleaning, wash, washing, clean, cleaning, window washing, pressure cleaning, soft washing,
+  house, apartment, building, cement, concrete, driveway, siding, stucco, tile, roof, shingles, vinyl, hardi board, organic, wood, deck, fence, oxidation, garage, gutter, gutters,
+  long beach, seal beach, huntington beach, lakewood, rossmoor, naples, naples island, peninsula, belmont shore, belmont shores, belmont heights, bixby, bixby knolls, signal hill, carson, torrance, san pedro, bellflower, cypress, cerritos, sunset beach, los al, los altos,
+  90804, 90803, 90802, 90805,
+  pane in the glass, coastline shine, jt's solar and window cleaning, prime power clean, guru solar cleaning, puff window cleaning, flamingo window pro house wash, ssc window cleaning, better home pros, legends, hydro pressure washing, natural pro, derf, derf's, pacific pressure
+</div>
+
     </div>
   );
 }
 
 export default App;
+
+
+
