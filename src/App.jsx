@@ -315,14 +315,54 @@ function App() {
 </section>
 
 <div className="hidden">
-  window cleaning, pressure washing, solar panel cleaning, wash, washing, clean, cleaning, window washing, pressure cleaning, soft washing,
-  house, apartment, building, cement, concrete, driveway, siding, stucco, tile, roof, shingles, vinyl, hardi board, organic, wood, deck, fence, oxidation, garage, gutter, gutters,
+  window cleaning, window cleaning long beach, window cleaning service, window cleaning service long beach, pressure washing, pressure washing long beach, solar panel cleaning, solar panel cleaning long beach, wash, washing, window washing, clean, cleaning, window washing long beach, pressure cleaning, pressure cleaning long beach, power washing, power washing long beach, soft washing,
+  house, apartment, building, cement, concrete, concrete washing, driveway, siding, stucco, tile, roof, shingles, vinyl, hardi board, organic, wood, deck, fence, oxidation, garage, gutter, gutters,
   long beach, seal beach, huntington beach, lakewood, rossmoor, naples, naples island, peninsula, belmont shore, belmont shores, belmont heights, bixby, bixby knolls, signal hill, carson, torrance, san pedro, bellflower, cypress, cerritos, sunset beach, los al, los altos,
   90804, 90803, 90802, 90805,
-  pane in the glass, coastline shine, jt's solar and window cleaning, prime power clean, guru solar cleaning, puff window cleaning, flamingo window pro house wash, ssc window cleaning, better home pros, legends, hydro pressure washing, natural pro, derf, derf's, pacific pressure
+  pane in the glass, coastline shine, jt's solar and window cleaning, prime power clean, guru solar cleaning, puff window cleaning, flamingo window pro house wash, ssc window cleaning, better home pros, legends, hydro pressure washing, natural pro, derf, derf's, pacific pressure, residential window cleaning in Long Beach, professional pressure washing service near Seal Beach, solar panel cleaning experts in Lakewood, soft washing for stucco and siding in 90803, affordable concrete cleaning in Belmont Shore, deck and fence power washing in Bixby Knolls, roof washing and gutter cleaning in Signal Hill, compare Glass Action Cleaning with JT's or Legends, exterior house cleaning Long Beach CA, driveway pressure washing services near me, solar panel washing companies near Long Beach CA, gutter and roof cleaning services in Huntington Beach, pressure washing for patios and garages in Lakewood, trusted soft wash house cleaners in Rossmoor, vinyl siding and stucco cleaning near 90802, who does pressure washing in Long Beach, best rated window cleaner in 90803, local solar panel cleaners near Seal Beach, driveway cleaning company near Lakewood, how to clean gutters in Belmont Heights, mobile soft washing near Naples Island, roof and siding washing in Carson CA, exterior cleaning pros Long Beach, Long Beach window cleaning company reviews, affordable power washing near Bixby Knolls
+
+
+
 </div>
 
-    </div>
+    <footer className="bg-gray-100 text-gray-600 text-sm text-center py-6 mt-12 border-t">
+  <div className="max-w-7xl mx-auto px-4">
+    <p>© {new Date().getFullYear()} Glass Action Cleaning. All rights reserved.</p>
+    <p className="mt-1">
+      Serving Long Beach, Seal Beach, Lakewood, and surrounding areas.
+    </p>
+    <p className="mt-1">
+      <a
+        href="https://www.instagram.com/glassactioncleaning"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
+      >
+        Instagram
+      </a>{" "}
+      |{" "}
+      <a
+        href="https://www.yelp.com/biz/glass-action-cleaning-long-beach"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
+      >
+        Yelp
+      </a>{" "}
+      |{" "}
+      <a
+        href="https://g.page/r/Ca7-EQK5Sdv5EBM/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
+      >
+        Google Reviews
+      </a>
+    </p>
+  </div>
+</footer>
+
+</div>
   );
 }
 
