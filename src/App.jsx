@@ -301,7 +301,7 @@ function App() {
           id="markate-widget-contact-iframe"
           src="https://www.markate.com/public/widget/contact?id=354173a034482a00258a54ec76edea93:36100:09b15aee"
           width="100%"
-          height="1800"
+          height="1100"
           scrolling="no"
           frameBorder="0"
           allowTransparency="true"
