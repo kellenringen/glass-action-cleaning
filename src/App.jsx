@@ -6,6 +6,8 @@ import truckImage from "./assets/truck-photo.jpg";
 import windowImg from "./assets/window-cleaning.jpg";
 import pressureImg from "./assets/pressure-washing-2.jpg";
 import solarImg from "./assets/solar-panel-cleaning.jpg";
+import Schema from './Schema';
+
 
 function App() {
   const [showSolar, setShowSolar] = useState(false);
@@ -408,6 +410,8 @@ function App() {
     </p>
   </div>
 </footer>
+
+<Schema />  {/* ✅ This adds your SEO schema to the page */}
 
 </div>
   );
